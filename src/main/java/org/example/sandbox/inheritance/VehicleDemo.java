@@ -1,6 +1,6 @@
 package org.example.sandbox.inheritance;
 
-public class VehicleDemo {
+public class VehicleDemo { 
 
     public static void main(String[] args) {
 
