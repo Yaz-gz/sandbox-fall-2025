@@ -5,9 +5,9 @@ public class VehicleDemo {
         System.out.println("=== Vehicle Inheritance Hierarchy Demo ===\n");
 
         // Creating instances
-        Car sedan = new Car("Toyota", "Camry", 2023, 14.5, 4, 32.0);
-        Motorcycle bike = new Motorcycle("Harley-Davidson", "Sportster", 2022, 3.3, false, 50.0);
-        Helicopter chopper = new Helicopter("Bell", "206", 2021, 110, 1, 8.5);
+        Vehicle sedan = new Car("Toyota", "Camry", 2023, 14.5, 4, 32.0);
+        Vehicle bike = new Motorcycle("Harley-Davidson", "Sportster", 2022, 3.3, false, 50.0);
+        Vehicle chopper = new Helicopter("Bell", "206", 2021, 110, 1, 8.5);
 
         // Demonstrating polymorphism with array of Vehicle references
         Vehicle[] vehicles = {sedan, bike, chopper};
@@ -24,15 +24,15 @@ public class VehicleDemo {
         }
 
         System.out.println("--- Specific class behaviors ---");
-        sedan.openTrunk();
-        bike.wheelie();
+        ((Car) sedan).openTrunk();
+        ((Motorcycle) bike).wheelie();
 
         // Demonstrating multiple interface implementation
         System.out.println("\n--- Flying vehicle capabilities ---");
-        chopper.takeOff();
-        chopper.hover();
-        System.out.println("Max Altitude: " + chopper.getMaxAltitude() + " feet");
-        chopper.land();
+        ((Helicopter) chopper).takeOff();
+        ((Helicopter) chopper).hover();
+        System.out.println("Max Altitude: " + ((Helicopter) chopper).getMaxAltitude() + " feet");
+        ((Helicopter) chopper).land();
 
         // Static interface method
         System.out.println("\n--- Static interface method ---");
@@ -49,5 +49,15 @@ public class VehicleDemo {
                 System.out.println(v.getBrand() + " can fly up to " + f.getMaxAltitude() + " feet");
             }
         }
+
+        // Composition example
+        System.out.println("\n--- Garage composition ---");
+        Garage garage = new Garage(); // composition
+        garage.addVehicle(sedan); // aggregation
+        garage.addVehicle(bike); // aggregation
+        garage.showVehicles();
+
+        System.out.println("\n--- Car composition (Engine) ---");
+        ((Car) sedan).showEngineSpecs();
     }
 }
