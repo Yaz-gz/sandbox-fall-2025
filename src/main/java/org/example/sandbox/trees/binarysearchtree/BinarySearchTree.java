@@ -3,6 +3,7 @@ package org.example.sandbox.trees.binarysearchtree;
 
 import org.example.sandbox.trees.ElementNotFoundException;
 import org.example.sandbox.trees.Tree;
+import org.example.sandbox.trees.binarytree.BinaryTree;
 
 import java.util.*;
 
@@ -199,6 +200,7 @@ public class BinarySearchTree<T extends Comparable> implements Tree<T> {
     }
 
     private void inOrder(BinaryTreeNode<T> node, Queue<T> tempList) {
+
         // Recursively traverse the current node's left subtree.
         // Visit the current node (in the figure: position green).
         // Recursively traverse the current node's right subtree.
@@ -220,6 +222,7 @@ public class BinarySearchTree<T extends Comparable> implements Tree<T> {
     }
 
     private void postOrder(BinaryTreeNode<T> node, Queue<T> tempList) {
+
         // Recursively traverse the current node's left subtree.
         // Recursively traverse the current node's right subtree.
         // Visit the current node (in the figure: position blue).
@@ -240,7 +243,8 @@ public class BinarySearchTree<T extends Comparable> implements Tree<T> {
         return tempList.iterator();
     }
 
-    public void levelOrder(BinaryTreeNode<T> node, Queue<T> tempList) {
+    private void levelOrder(BinaryTreeNode<T> node, Queue<T> tempList) {
+
         // temporary node queue
         Queue<BinaryTreeNode<T>> queue = new LinkedList<>();
         queue.add(node);

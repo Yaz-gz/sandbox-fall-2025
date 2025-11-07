@@ -1,7 +1,5 @@
 package org.example.sandbox.trees.binarysearchtree;
 
-
-
 import org.example.sandbox.trees.Tree;
 
 import java.util.Iterator;
@@ -25,8 +23,7 @@ public class BinarySearchTreeDriver {
         bst.insert(9);
         bst.insert(5);
 
-        /*
-        bst.insert(1);
+        /*bst.insert(1);
         bst.insert(2);
         bst.insert(3);
         bst.insert(4);
@@ -37,8 +34,7 @@ public class BinarySearchTreeDriver {
         bst.insert(9);
         bst.insert(10);
         bst.insert(11);
-        bst.insert(12);
-        */
+        bst.insert(12);*/
 
         System.out.println("In Order traversal of binary tree will be:");
         printTraversal(bst.iteratorInOrder());
