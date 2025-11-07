@@ -8,6 +8,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
     private Node tail;
     private int size;
 
+    // O(1) time complexity
     public SinglyLinkedList() {
         head = null;
         tail = null;
@@ -17,15 +18,15 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
     @Override
     public void addFirst(E element) {
 
-        Node node = new Node(element, head); // 1 & 2
+        Node node = new Node(element, head); // 1 & 2 O(1)
 
         if (head == null) { // 3
-            head = node;
-            tail = node;
+            head = node; // O(1)
+            tail = node; // O(1)
         } else {
-            head = node;
+            head = node; // O(1)
         }
-        size++;
+        size++; // O(1)
 
     }
 
